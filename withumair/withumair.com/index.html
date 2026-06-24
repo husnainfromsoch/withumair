@@ -289,9 +289,43 @@ document.addEventListener('click', function(e) {
   }
 }
 
-/* Fix: render heading above the image by pulling it before the stats+image row */
+/* Fix: correct section layout — heading (1st) → stats (2nd) → awards image (3rd) */
+/* HTML order is: stats / image / heading — we reorder with flex order values */
+
+#section-IlWIGtR05_ > .inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+
+/* 1. Heading text — rendered first (top) */
 #row-C8KAEQ9L65 {
-  order: -1;
+  order: 1 !important;
+  position: static !important;
+  z-index: auto !important;
+}
+
+/* 2. Stats row — rendered second */
+#row-OnTpAIB-65 {
+  order: 2 !important;
+  position: static !important;
+  z-index: auto !important;
+}
+
+/* 3. Awards image — rendered last (bottom), block-level, no stacking tricks */
+#custom-code-VjC7SttRtV {
+  order: 3 !important;
+  position: static !important;
+  z-index: auto !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+#custom-code-VjC7SttRtV img {
+  display: block !important;
+  position: static !important;
+  width: 100% !important;
+  height: auto !important;
 }
 </style>
 
