@@ -1305,6 +1305,15 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(el);
   });
 });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('audit') === 'true') {
+    var popup = document.getElementById('audit-popup');
+    if (popup) { popup.style.display = 'flex'; }
+  }
+});
 </script></body>
 <!-- Mirrored from withumair.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Jun 2026 09:36:38 GMT -->
 </html>
