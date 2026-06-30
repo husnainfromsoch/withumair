@@ -1317,7 +1317,16 @@ document.addEventListener('DOMContentLoaded', function() {
     var cal = document.getElementById('fcta-calendar');
     if (cal) {
       cal.style.display = 'block';
-      setTimeout(function() { cal.scrollIntoView({ behavior: 'smooth' }); }, 300);
+      setTimeout(function() {
+        cal.scrollIntoView({ behavior: 'smooth' });
+        try {
+          Cal.ns["30min-fcta"]("inline", {
+            elementOrSelector: "#my-cal-inline-fcta",
+            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+            calLink: "withumair/30min"
+          });
+        } catch(e) {}
+      }, 300);
     }
   }
 });
