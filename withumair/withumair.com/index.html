@@ -1313,6 +1313,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var popup = document.getElementById('audit-popup');
     if (popup) { popup.style.display = 'flex'; }
   }
+  if (params.get('book') === 'true') {
+    var cal = document.getElementById('fcta-calendar');
+    if (cal) {
+      cal.style.display = 'block';
+      setTimeout(function() { cal.scrollIntoView({ behavior: 'smooth' }); }, 300);
+    }
+  }
 });
 </script></body>
 <!-- Mirrored from withumair.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 Jun 2026 09:36:38 GMT -->
